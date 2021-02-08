@@ -1,0 +1,23 @@
+{
+  "name": "sql-injection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mvehc/sql-injection.git"
+  },
+  "author": "Jeffrey Meng <jeffkmeng@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mvehc/sql-injection/issues"
+  },
+  "homepage": "https://github.com/mvehc/sql-injection#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
