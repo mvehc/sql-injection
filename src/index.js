@@ -49,4 +49,30 @@ app.post('/login', (req, res) => {
     return res.redirect('/');
 });
 
+
+// login route
+app.post('/login2', (req, res) => {
+    if (!req.body.username || !req.body.password) {
+        return res.redirect('/');
+    }
+
+
+    // see if user is in database
+    const query = `SELECT id FROM users WHERE
+    username = '${req.body.username}' AND
+    (password = '${req.body.password})'
+  `;
+
+    let id;
+    try { id = db.prepare(query).get().id } catch {
+        return res.redirect('/');
+    }
+
+    // correct login
+    if (id) return res.sendFile('flag.html', { root: __dirname });
+
+    // incorrect login
+    return res.redirect('/');
+});
+
 app.listen(3000., () => console.log("Server is listening!"));
