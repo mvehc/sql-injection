@@ -59,8 +59,8 @@ app.post('/login2', (req, res) => {
 
     // see if user is in database
     const query = `SELECT id FROM users WHERE
-    username = '${req.body.username}' AND
-    (password = '${req.body.password})'
+    (username = '${req.body.username}' AND
+    (password = '${req.body.password}'))
   `;
 
     let id;
